@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-web-app-1
+  name: sample-web-app-2
 spec:
   selector:
-    app: sample-web-app-1
+    app: sample-web-app-2
   ports:
   - protocol: TCP
     port: 8099
@@ -14,19 +14,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-web-app-1
+  name: sample-web-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sample-web-app-1
+      app: sample-web-app-2
   template:
     metadata:
       labels:
-        app: sample-web-app-1
+        app: sample-web-app-2
     spec:
       containers:
-      - name: sample-web-app-1
+      - name: sample-web-app-2
         image: nginx:latest
         ports:
         - containerPort: 80
